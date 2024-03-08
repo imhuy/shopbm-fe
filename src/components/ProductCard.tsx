@@ -318,7 +318,10 @@ const ProductCard: FC<ProductCardProps> = ({
             // onClick={() => notifyAddTocart({ size: "XL" })}
             >
               {/* <BagIcon className="w-3.5 h-3.5 mb-0.5" /> */}
-              <span className="ms-1 text-white font-bold">Mua Ngay</span>
+              <Link href="/checkout">   <span className="ms-1 text-white font-bold">Mua Ngay</span>
+
+              </Link>
+
             </Button>
           </div>
         </div>
