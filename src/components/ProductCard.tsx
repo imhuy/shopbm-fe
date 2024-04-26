@@ -4,7 +4,10 @@ import { Transition } from "@/app/headlessui";
 import { PRODUCTS, Product } from "@/data/data";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
-import { ArrowsPointingOutIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowsPointingOutIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
@@ -162,10 +165,11 @@ const ProductCard: FC<ProductCardProps> = ({
             <div
               key={index}
               onClick={() => setVariantActive(index)}
-              className={`relative w-6 h-6 rounded-full overflow-hidden z-10 border cursor-pointer ${variantActive === index
-                ? getBorderClass(variant.color)
-                : "border-transparent"
-                }`}
+              className={`relative w-6 h-6 rounded-full overflow-hidden z-10 border cursor-pointer ${
+                variantActive === index
+                  ? getBorderClass(variant.color)
+                  : "border-transparent"
+              }`}
               title={variant.name}
             >
               <div
@@ -183,10 +187,11 @@ const ProductCard: FC<ProductCardProps> = ({
           <div
             key={index}
             onClick={() => setVariantActive(index)}
-            className={`relative w-11 h-6 rounded-full overflow-hidden z-10 border cursor-pointer ${variantActive === index
-              ? "border-black dark:border-slate-300"
-              : "border-transparent"
-              }`}
+            className={`relative w-11 h-6 rounded-full overflow-hidden z-10 border cursor-pointer ${
+              variantActive === index
+                ? "border-black dark:border-slate-300"
+                : "border-transparent"
+            }`}
             title={variant.name}
           >
             <div
@@ -196,11 +201,11 @@ const ProductCard: FC<ProductCardProps> = ({
                   // @ts-ignore
                   typeof variant.thumbnail?.src === "string"
                     ? // @ts-ignore
-                    variant.thumbnail?.src
+                      variant.thumbnail?.src
                     : typeof variant.thumbnail === "string"
-                      ? variant.thumbnail
-                      : ""
-                  })`,
+                    ? variant.thumbnail
+                    : ""
+                })`,
               }}
             ></div>
           </div>
@@ -234,7 +239,6 @@ const ProductCard: FC<ProductCardProps> = ({
     );
   };
 
-
   return (
     <>
       <div
@@ -242,13 +246,10 @@ const ProductCard: FC<ProductCardProps> = ({
       >
         <Link href={"/checkout"} className="absolute inset-0"></Link>
 
-
-
         <div>
           <h2 className="nc-ProductCard__title m-4 text-xl font-bold transition-colors">
             {name}
           </h2>
-
         </div>
 
         <div className="relative flex-shrink-0 bg-slate-50 dark:bg-slate-300 rounded-3xl overflow-hidden z-1 group">
@@ -263,11 +264,10 @@ const ProductCard: FC<ProductCardProps> = ({
             /> */}
 
             <div className="object-cover w-full h-80 drop-shadow-xl">
-
-              <div className=" font-semibold text-sm flex flex-col mt-4 mx-4 gap-y-5 text-black">
+              <div className="  leading-6 text-sm flex flex-col mt-4 mx-4 gap-y-5 text-black">
                 <div className="flex items-center gap-x-2">
                   <SparklesIcon className="w-3.5 h-3.5" color="green" />
-                  <span>Live Ads </span>
+                  <span>Quốc gia : Việt nam</span>
                 </div>
 
                 <div className="flex items-center gap-x-2">
@@ -308,20 +308,19 @@ const ProductCard: FC<ProductCardProps> = ({
         <div className="space-y-4 px-2.5 pt-5 pb-2.5">
           {/* {renderVariants()} */}
 
-
           <div className="flex justify-between items-end flex-wrap  gap-4">
             <Prices price={price} />
             <Button
               className="  border rounded-md bg-slate-800"
               fontSize="text-xs"
               sizeClass="py-2 px-4"
-            // onClick={() => notifyAddTocart({ size: "XL" })}
+              // onClick={() => notifyAddTocart({ size: "XL" })}
             >
               {/* <BagIcon className="w-3.5 h-3.5 mb-0.5" /> */}
-              <Link href="/checkout">   <span className="ms-1 text-white font-bold">Mua Ngay</span>
-
+              <Link href="/checkout">
+                {" "}
+                <span className="ms-1 text-white font-bold">Mua Ngay</span>
               </Link>
-
             </Button>
           </div>
         </div>

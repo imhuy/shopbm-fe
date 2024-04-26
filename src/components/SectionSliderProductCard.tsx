@@ -51,11 +51,11 @@ const SectionSliderProductCard: FC<SectionSliderProductCardProps> = ({
         },
         640: {
           gap: 20,
-          perView: 2,
+          perView: 1.3,
         },
         500: {
           gap: 20,
-          perView: 2,
+          perView: 1.5,
         },
       },
     };
